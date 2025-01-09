@@ -105,14 +105,84 @@ function documentLoader() {
   var PercyArray = Array.from(visible_percy);
     if (event.target.value == 'both') {
     //write an forEach() method that shows all the text written and modified by both hand (in black?). The forEach() method of Array instances executes a provided function once for each array element.
-     
+      MaryArray.forEach(function(element) {
+        element.style.color= 'black';});
+      PercyArray.forEach(function(element) {
+        element.style.color = 'black';
+      });
+
     } else if (event.target.value == 'Mary') {
      //write an forEach() method that shows all the text written and modified by Mary in a different color (or highlight it) and the text by Percy in black. 
-     
+      MaryArray.forEach(function(element){
+        element.style.color = 'red';
+      });
+      PercyArray.forEach(function(element){
+        element.style.color = 'black';
+      });
     } else {
      //write an forEach() method that shows all the text written and modified by Percy in a different color (or highlight it) and the text by Mary in black.
-    
+      MaryArray.forEach(function(element){
+        element.style.color = 'black';
+      });
+      PercyArray.forEach(function(element){
+        element.style.color = 'red';
+      });
     }
   }
 // write another function that will toggle the display of the deletions by clicking on a button
+function toggleDeletions(event) {
+  let deletions = document.getElementsByTagName('del');
+  let deletionArray = Array.from(deletions);
+  let selectedValue = event.target.value;
+
+  if (selectedValue === 'Show Deletions') {
+    deletionArray.forEach(function(element){
+      element.style.display = 'inline';
+    });
+  }
+  else if (selectedValue === 'Hide Deletions') {
+    deletionArray.forEach(function(element) {
+      element.style.display = 'none';
+    });
+  }
+}
+
 // EXTRA: write a function that will display the text as a reading text by clicking on a button or another dropdown list, meaning that all the deletions are removed and that the additions are shown inline (not in superscript)
+function toggleAnnotations(event) {
+  let deletions = document.querySelectorAll('del');
+  let deletionArray = Array.from(deletions);
+  let additions = document.querySelectorAll('.supraAdd');
+  let additionArray = Array.from(additions);
+  let selectedValue = event.target.value;
+  let metamarks = document.querySelectorAll('metamark');
+  let metamarkArray = Array.from(metamarks)
+
+  
+
+  if (selectedValue === 'Reading Text') {
+    deletionArray.forEach(function(element){
+      element.style.display = 'none';
+    });
+    additionArray.forEach(function(element) {
+      element.style.display = 'inline';
+      element.style.verticalAlign = 'baseline';
+      element.style.fontSize = 'initial';
+    });
+    metamarkArray.forEach(function(element) {
+      element.style.display = 'none';
+    });
+  }
+  else if (selectedValue === 'Show Annotations') {
+    deletionArray.forEach(function(element) {
+      element.style.display = 'inline'
+    });
+    additionArray.forEach(function(element){
+      element.style.display = 'inline';
+      element.style.verticalAlign='super';
+      element.style.fontSize='smaller';
+    });
+    metamarkArray.forEach(function(element) {
+      element.style = 'inline'
+    });
+  }
+}
