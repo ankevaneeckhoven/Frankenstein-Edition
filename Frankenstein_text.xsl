@@ -21,7 +21,7 @@
                             <xsl:value-of select="."/></del><br/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <span >
+                        <span>
                             <xsl:attribute name="class">
                                 <xsl:value-of select="attribute::hand" />
                             </xsl:attribute>
@@ -70,8 +70,45 @@
         </span>
     </xsl:template>
     
-    
     <!-- add additional templates below, for example to transform the tei:lb in <br/> empty elements, tei:hi[@rend = 'sup'] in <sup> elements, the underlined text, additions with the attribute "overwritten" etc. -->
+    <!--template for linebreaks-->
+    <xsl:template match="tei:lb">
+        <br/>
+        <xsl:apply-templates/>
+    </xsl:template>
+
+    <!--template for encircling the page numbers; refers to the css element .encircle-->
+    <xsl:template match="tei:hi[@rend = 'circled']">
+        <span class="encircle">
+            <xsl:value-of select="."/>
+        </span>
+    </xsl:template>
+
+    <xsl:template match="tei:metamark">
+        <metamark>
+            <xsl:value-of select="."/>
+        </metamark>
+    </xsl:template>
+
+    <!--template for underlining certain elements-->
+    <xsl:template match="tei:hi[@rend='underline']">
+        <span class="underline">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+
+    <xsl:template match="tei:metamark[@function='pagenumber']">
+        <span style="float: right;">
+            <xsl:apply-templates select="tei:num"/>
+        </span>
+    </xsl:template>
+
+    <xsl:template match="tei:num">
+        <xsl:apply-templates/>
+    </xsl:template>
+
+
+        
 
     
 </xsl:stylesheet>

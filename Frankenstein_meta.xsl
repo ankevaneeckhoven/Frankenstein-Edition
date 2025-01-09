@@ -8,7 +8,7 @@
     <!-- <xsl:output method="xml" omit-xml-declaration="yes" indent="yes" /> -->
 
     
-    <xsl:template match="tei:TEI">
+     <xsl:template match="tei:TEI">
                      <div class="row">
                          <div class="col">
                              <h4>About the manuscript page:</h4>
@@ -16,14 +16,22 @@
                              <xsl:value-of select="//tei:licence"/> <!-- You can change the way the metadata is visualised as well-->
                          </div>
                          <div class="col">
-                            <ul> 
+                            <ul>
                                 <li>Total number of modifications: 
-                                    <xsl:value-of select="count(//tei:del|//tei:add)" /> <!-- Counts all the add and del elements, and puts it in a list item -->
+                                    <xsl:value-of select="count(//tei:del | //tei:add)" />
                                 </li>
-                                <li>Number of additions: 
-                                    <!-- count the additions only -->
+                                <li>Total number of additions: 
+                                    <xsl:value-of select="count(//tei:add)" />
                                 </li>
-                                <!-- add other list items in which you count things, such as the modifications made by Percy -->
+                                <li>Total number of deletions:
+                                    <xsl:value-of select="count(//tei:del)" />
+                                </li>
+                                <li>Number of modifications (deletions &amp; additions) made by Mary Wollstonecraft Shelley:
+                                    <xsl:value-of select="count(//tei:del[@hand='#MWS'] | //tei:add[@hand='#MWS'])" />
+                                </li>
+                                <li>Number of modifications (deletions &amp; additions) made by Percy Bysshe Shelley:
+                                    <xsl:value-of select="count(//tei:del[@hand='#PBS'] | //tei:add[@hand='#PBS'])" />
+                                </li>
                             </ul>
                         </div>
                      </div>
