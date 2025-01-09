@@ -1,4 +1,5 @@
 body {
+    background-color: #d3b28f;
 
 }
 .starter-template {
@@ -31,5 +32,82 @@ p {
 .mirador-canvas-nav {
     display: none !important;
 }
+/*annotations*/
+.supraAdd {
+    display: inline;
+    vertical-align: super;
+    font-size: smaller;
+    position: relative;
+}
+metamark {
+    display: inline;
+    vertical-align: sub;
+    font-size: smaller;
+    position: relative;
+}
+.underline {
+    text-decoration: underline;
+}
+/*images*/
+#image_container {
+    width:100%;
+    overflow:auto;
+}
+#image_left {
+    float: left;
+    width: 50%;
+}
+#image_right {
+    float: right;
+    width: 50%;
+}
+/*list with pages on home page*/
+.list_left {
+    float: left;
+    width: 25%;
+}
 
+.list_right {
+    float: left;
+    width: 25%;
+}
+/*encircle page numbers*/
+.encircle {
+    border-radius: 50%;
+    border-style: solid;
+    text-align: center;
+}
+/*color changes of menus and links*/
+#sel-hand {
+    background-color: #8f6e4b;
+    color: black;
+}
 
+#header_menu {
+    background-color: #725537;
+}
+#links {
+    color:#2d545e
+}
+
+.navbar {
+    background-color: #8f6e4b !important;
+}
+.navbar-nav .nav-link, .navbar-brand {
+    color: black !important;
+  }
+.dropdown-menu {
+    background-color:#d2b08b;
+}
+.dropdown-menu .dropdown-item {
+    color:black !important;
+}
+.dropdown-menu .dropdown-item:hover {
+    background-color: #8f6e4b !important;
+}
+/*takes care of links to navigate to the next or previous pages*/
+#next_previous_links {
+    color:#2d545e;
+    padding-left: 0px;
+    padding-right:500px
+}
