@@ -135,12 +135,12 @@ function toggleDeletions(event) {
   let deletionArray = Array.from(deletions);
   let selectedValue = event.target.value;
 
-  if (selectedValue === 'Show Deletions') {
+  if (selectedValue == 'Show Deletions') {
     deletionArray.forEach(function(element){
       element.style.display = 'inline';
     });
   }
-  else if (selectedValue === 'Hide Deletions') {
+  else if (selectedValue == 'Hide Deletions') {
     deletionArray.forEach(function(element) {
       element.style.display = 'none';
     });
@@ -157,9 +157,7 @@ function toggleAnnotations(event) {
   let metamarks = document.querySelectorAll('metamark');
   let metamarkArray = Array.from(metamarks)
 
-  
-
-  if (selectedValue === 'Reading Text') {
+  if (selectedValue == 'Reading Text') {
     deletionArray.forEach(function(element){
       element.style.display = 'none';
     });
@@ -172,7 +170,7 @@ function toggleAnnotations(event) {
       element.style.display = 'none';
     });
   }
-  else if (selectedValue === 'Show Annotations') {
+  else if (selectedValue == 'Show Annotations') {
     deletionArray.forEach(function(element) {
       element.style.display = 'inline'
     });

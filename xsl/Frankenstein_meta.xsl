@@ -16,6 +16,7 @@
                              <xsl:value-of select="//tei:licence"/> <!-- You can change the way the metadata is visualised as well-->
                          </div>
                          <div class="col">
+                            <h4>Page statistics:</h4>
                             <ul>
                                 <li>Total number of modifications: 
                                     <xsl:value-of select="count(//tei:del | //tei:add)" />

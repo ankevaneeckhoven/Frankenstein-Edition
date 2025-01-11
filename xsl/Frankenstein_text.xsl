@@ -84,31 +84,35 @@
         </span>
     </xsl:template>
 
+    <!--template for the metamarks-->
     <xsl:template match="tei:metamark">
         <metamark>
             <xsl:value-of select="."/>
         </metamark>
     </xsl:template>
 
-    <!--template for underlining certain elements-->
+    <!--template for underlining certain elements, refers to the the css element .underline-->
     <xsl:template match="tei:hi[@rend='underline']">
         <span class="underline">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
 
+    <!--tempalte for making pagenumbers appear on the right side of the page-->
     <xsl:template match="tei:metamark[@function='pagenumber']">
         <span style="float: right;">
             <xsl:apply-templates select="tei:num"/>
         </span>
     </xsl:template>
 
-    <xsl:template match="tei:num">
-        <xsl:apply-templates/>
+    <!--template for displaying overwritten or inline additions in cursive-->
+    <xsl:template match="tei:add[@place='overwritten' or @place='inline']">
+        <i>
+            <xsl:attribute name="class">
+                <xsl:value-of select="@hand"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </i>
     </xsl:template>
 
-
-        
-
-    
 </xsl:stylesheet>

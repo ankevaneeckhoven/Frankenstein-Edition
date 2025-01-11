@@ -37,6 +37,7 @@ p {
     display: inline;
     vertical-align: super;
     font-size: smaller;
+    font-style: italic;
     position: relative;
 }
 metamark {
@@ -105,7 +106,7 @@ metamark {
 .dropdown-menu .dropdown-item:hover {
     background-color: #8f6e4b !important;
 }
-/*takes care of links to navigate to the next or previous pages*/
+/*takes care of how links to navigate to the next or previous pages should be displayed*/
 #next_previous_links {
     color:#2d545e;
     padding-left: 0px;
