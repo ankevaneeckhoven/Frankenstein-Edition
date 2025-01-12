@@ -98,8 +98,8 @@ function documentLoader() {
   statsLoader();
   // Event listener for sel1 change
   function selectHand(event) {
-  var visible_mary = document.getElementsByClassName('#MWS');
-  var visible_percy = document.getElementsByClassName('#PBS');
+  let visible_mary = document.getElementsByClassName('#MWS');
+  var visible_percy = document.getElementsByClassName('hand=#PBS');
   // Convert the HTMLCollection to an array for forEach compatibility
   var MaryArray = Array.from(visible_mary);
   var PercyArray = Array.from(visible_percy);
@@ -165,6 +165,7 @@ function toggleAnnotations(event) {
       element.style.display = 'inline';
       element.style.verticalAlign = 'baseline';
       element.style.fontSize = 'initial';
+      element.style.fontStyle = 'normal';
     });
     metamarkArray.forEach(function(element) {
       element.style.display = 'none';
@@ -178,6 +179,7 @@ function toggleAnnotations(event) {
       element.style.display = 'inline';
       element.style.verticalAlign='super';
       element.style.fontSize='smaller';
+      element.style.fontStyle = 'italic';
     });
     metamarkArray.forEach(function(element) {
       element.style = 'inline'

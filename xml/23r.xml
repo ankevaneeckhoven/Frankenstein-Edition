@@ -53,7 +53,7 @@
             </p>
             <!--not sure about these list items and their positions-->
             <p style="text-indent:20px">
-               "Like one who on a lon<del type="crossedOut" hand="#MWS" rend="blackink">s</del>esome road<lb/>
+               "Like one who on a lon<del type="crossedOut" hand="#MWS" rend="blackink">s</del><add place="inline" hand="#MWS" rend="blackink">es</add>ome road<lb/>
                "and having once turned round<lb/>
                <add place="supralinear" hand="#MWS" rend="blackink">walks on</add><lb/>
                <del type="crossedOut" hand="#MWS" rend="blackink">wal</del>And turns no more his head<lb/>
